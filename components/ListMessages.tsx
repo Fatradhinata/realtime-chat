@@ -45,7 +45,7 @@ export default function ListMessages() {
     return () => {
       channel.unsubscribe();
     }
-  }, [messages])
+  }, [messages, addMessage, optimisticDeleteMessage, optimisticIds, optimisticUpdateMessage, supabase])
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -53,7 +53,7 @@ export default function ListMessages() {
     if (scrollContainer && !userScrolled) {
       scrollContainer.scrollTop = scrollContainer.scrollHeight
     }
-  }, [messages])
+  }, [messages, userScrolled])
 
   const handleOnScroll = () => {
     const scrollContainer = scrollRef.current;
