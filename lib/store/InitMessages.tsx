@@ -11,6 +11,7 @@ export default function InitMessages({ messages }: { messages: Imessage[] }) {
   useEffect(() => {
     if (!initState.current) {
       useMessage.setState({ messages, hasMore })
+      
     }
 
     initState.current = true;
